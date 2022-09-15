@@ -5,5 +5,5 @@ let passed;
 
 document.write(MyName)
 document.write(MyAge)
-document.write(Diploma)
-document.write(passed)
+document.write(" ",Diploma)
+document.write(" ",passed)
