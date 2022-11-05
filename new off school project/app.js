@@ -12,7 +12,7 @@ let myWin;
 //add new compnents here (make sure to add their varible above)
 function startGame() {
     myGameArea.start();
-    myObstacle = new component(960, 210, 'black', 50, 0);
+    myObstacle = new component(960, 210, 'black', 40, 0);
     myObstacle2 = new component(100, 250, 'black', 0, 250);
     myObstacle4 = new component(200, 250, 'black', 140, 250);
     myObstacle3 = new component(900, 200, 'black', 100, 300);
