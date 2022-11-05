@@ -67,7 +67,7 @@ function component(width, height, color, x, y) {
 }
 
 
-// update every frame frame
+// update every frame
 function updateGameArea() {
     myGameArea.clear();
     myGamePiece.speedX = 0;
