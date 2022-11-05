@@ -4,6 +4,9 @@ let myObstacle2;
 let myObstacle3;
 let myObstacle4;
 let myObstacle5;
+let myObstacle6;
+let myObstacle7;
+let myWin;
 
 function startGame() {
     myGameArea.start();
@@ -12,6 +15,9 @@ function startGame() {
     myObstacle4 = new component(200, 250, 'black', 140, 250);
     myObstacle3 = new component(900, 200, 'black', 100, 300);
     myObstacle5 = new component(200, 250, 'black', 380, 250);
+    myObstacle6 = new component(170, 260, 'black', 830, 0);
+    myObstacle7 = new component(170, 250, 'black', 620, 250);
+    myWin = new component(40, 40, 'limegreen', 960, 260);
     myTrap = new component(30, 30, "red", 5, 215);
     myGamePiece = new component(30, 30, "blue", 5, 5);
 }
@@ -60,7 +66,7 @@ function updateGameArea() {
     myGameArea.clear();
     myGamePiece.speedX = 0;
     myGamePiece.speedY = 0;
-    if (myTrap.x >= 700) {
+    if (myTrap.x >= 800) {
         myTrap.speedX = -8;
     }
     if (myTrap.x <= 40) {
@@ -73,6 +79,9 @@ function updateGameArea() {
     myObstacle3.update();
     myObstacle4.update();
     myObstacle5.update();
+    myObstacle6.update();
+    myObstacle7.update();
+    myWin.update();
     if (myGameArea.keys && myGameArea.keys[65]) {
         if (myGamePiece.x - 1 <= 0) { }
         else if ((myGamePiece.x - 3) <= (myObstacle2.x + myObstacle2.width) && (myGamePiece.x - 3) >= myObstacle2.x && (myGamePiece.y + myGamePiece.height) >= myObstacle2.y && myGamePiece.y <= (myObstacle2.y + myObstacle2.height)) { }
@@ -80,6 +89,8 @@ function updateGameArea() {
         else if ((myGamePiece.x - 3) >= myObstacle3.x && (myGamePiece.x - 3) <= (myObstacle3.x + myObstacle3.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle3.y && myGamePiece.y <= (myObstacle3.y + myObstacle3.height)) { }
         else if ((myGamePiece.x - 3) >= myObstacle4.x && (myGamePiece.x - 3) <= (myObstacle4.x + myObstacle4.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle4.y && myGamePiece.y <= (myObstacle4.y + myObstacle4.height)) { }
         else if ((myGamePiece.x - 3) >= myObstacle5.x && (myGamePiece.x - 3) <= (myObstacle5.x + myObstacle5.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle5.y && myGamePiece.y <= (myObstacle5.y + myObstacle5.height)) { }
+        else if ((myGamePiece.x - 3) >= myObstacle6.x && (myGamePiece.x - 3) <= (myObstacle6.x + myObstacle6.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle6.y && myGamePiece.y <= (myObstacle6.y + myObstacle6.height)) { }
+        else if ((myGamePiece.x - 3) >= myObstacle7.x && (myGamePiece.x - 3) <= (myObstacle7.x + myObstacle7.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle7.y && myGamePiece.y <= (myObstacle7.y + myObstacle7.height)) { }
         else {
             myGamePiece.speedX = -4;
         }
@@ -91,6 +102,8 @@ function updateGameArea() {
         else if ((myGamePiece.x + myGamePiece.width + 3) >= myObstacle3.x && (myGamePiece.x + myGamePiece.width + 3) <= (myObstacle3.x + myObstacle3.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle3.y && myGamePiece.y <= (myObstacle3.y + myObstacle3.height)) { }
         else if ((myGamePiece.x + myGamePiece.width + 3) >= myObstacle4.x && (myGamePiece.x + myGamePiece.width + 3) <= (myObstacle4.x + myObstacle4.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle4.y && myGamePiece.y <= (myObstacle4.y + myObstacle4.height)) { }
         else if ((myGamePiece.x + myGamePiece.width + 3) >= myObstacle5.x && (myGamePiece.x + myGamePiece.width + 3) <= (myObstacle5.x + myObstacle5.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle5.y && myGamePiece.y <= (myObstacle5.y + myObstacle5.height)) { }
+        else if ((myGamePiece.x + myGamePiece.width + 3) >= myObstacle6.x && (myGamePiece.x + myGamePiece.width + 3) <= (myObstacle6.x + myObstacle6.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle6.y && myGamePiece.y <= (myObstacle6.y + myObstacle6.height)) { }
+        else if ((myGamePiece.x + myGamePiece.width + 3) >= myObstacle7.x && (myGamePiece.x + myGamePiece.width + 3) <= (myObstacle7.x + myObstacle7.width) && (myGamePiece.y + myGamePiece.height) >= myObstacle7.y && myGamePiece.y <= (myObstacle7.y + myObstacle7.height)) { }
         else {
             myGamePiece.speedX = 4;
         }
@@ -102,6 +115,8 @@ function updateGameArea() {
         else if ((myGamePiece.y - 3) <= (myObstacle3.y + myObstacle3.height) && (myGamePiece.y - 3) >= myObstacle3.y && (myGamePiece.x + myGamePiece.width) >= myObstacle3.x && myGamePiece.x <= (myObstacle3.x + myObstacle3.width)) { }
         else if ((myGamePiece.y - 3) <= (myObstacle4.y + myObstacle4.height) && (myGamePiece.y - 3) >= myObstacle4.y && (myGamePiece.x + myGamePiece.width) >= myObstacle4.x && myGamePiece.x <= (myObstacle4.x + myObstacle4.width)) { }
         else if ((myGamePiece.y - 3) <= (myObstacle5.y + myObstacle5.height) && (myGamePiece.y - 3) >= myObstacle5.y && (myGamePiece.x + myGamePiece.width) >= myObstacle5.x && myGamePiece.x <= (myObstacle5.x + myObstacle5.width)) { }
+        else if ((myGamePiece.y - 3) <= (myObstacle6.y + myObstacle6.height) && (myGamePiece.y - 3) >= myObstacle6.y && (myGamePiece.x + myGamePiece.width) >= myObstacle6.x && myGamePiece.x <= (myObstacle6.x + myObstacle6.width)) { }
+        else if ((myGamePiece.y - 3) <= (myObstacle7.y + myObstacle7.height) && (myGamePiece.y - 3) >= myObstacle7.y && (myGamePiece.x + myGamePiece.width) >= myObstacle7.x && myGamePiece.x <= (myObstacle7.x + myObstacle7.width)) { }
         else {
             myGamePiece.speedY = -4;
         }
@@ -113,15 +128,21 @@ function updateGameArea() {
         else if ((myGamePiece.y + myGamePiece.height + 3) >= myObstacle3.y && (myGamePiece.y + myGamePiece.height + 3) <= (myObstacle3.y + myObstacle3.height) && (myGamePiece.x + myGamePiece.width) >= myObstacle3.x && myGamePiece.x <= (myObstacle3.x + myObstacle3.width)) { }
         else if ((myGamePiece.y + myGamePiece.height + 3) >= myObstacle4.y && (myGamePiece.y + myGamePiece.height + 3) <= (myObstacle4.y + myObstacle4.height) && (myGamePiece.x + myGamePiece.width) >= myObstacle4.x && myGamePiece.x <= (myObstacle4.x + myObstacle4.width)) { }
         else if ((myGamePiece.y + myGamePiece.height + 3) >= myObstacle5.y && (myGamePiece.y + myGamePiece.height + 3) <= (myObstacle5.y + myObstacle5.height) && (myGamePiece.x + myGamePiece.width) >= myObstacle5.x && myGamePiece.x <= (myObstacle5.x + myObstacle5.width)) { }
+        else if ((myGamePiece.y + myGamePiece.height + 3) >= myObstacle6.y && (myGamePiece.y + myGamePiece.height + 3) <= (myObstacle6.y + myObstacle6.height) && (myGamePiece.x + myGamePiece.width) >= myObstacle6.x && myGamePiece.x <= (myObstacle6.x + myObstacle6.width)) { }
+        else if ((myGamePiece.y + myGamePiece.height + 3) >= myObstacle7.y && (myGamePiece.y + myGamePiece.height + 3) <= (myObstacle7.y + myObstacle7.height) && (myGamePiece.x + myGamePiece.width) >= myObstacle7.x && myGamePiece.x <= (myObstacle7.x + myObstacle7.width)) { }
         else {
             myGamePiece.speedY = 4;
         }
     }
+    // the trap
     if ((myGamePiece.y + myGamePiece.height + 3) >= myTrap.y && (myGamePiece.y + myGamePiece.height + 3) <= (myTrap.y + myTrap.height) && (myGamePiece.x + myGamePiece.width) >= myTrap.x && myGamePiece.x <= (myTrap.x + myTrap.width)) { location.reload(); }
     else if ((myGamePiece.y - 3) <= (myTrap.y + myTrap.height) && (myGamePiece.y - 3) >= myTrap.y && (myGamePiece.x + myGamePiece.width) >= myTrap.x && myGamePiece.x <= (myTrap.x + myTrap.width)) { location.reload(); }
     else if ((myGamePiece.x + myGamePiece.width + 3) >= myTrap.x && (myGamePiece.x + myGamePiece.width + 3) <= (myTrap.x + myTrap.width) && (myGamePiece.y + myGamePiece.height) >= myTrap.y && myGamePiece.y <= (myTrap.y + myTrap.height)) { location.reload(); }
     else if ((myGamePiece.x - 3) >= myTrap.x && (myGamePiece.x - 3) <= (myTrap.x + myTrap.width) && (myGamePiece.y + myGamePiece.height) >= myTrap.y && myGamePiece.y <= (myTrap.y + myTrap.height)) { location.reload(); }
-    
+    // the win
+    if ((myGamePiece.y + (myGamePiece.height / 2)) >= myWin.y && (myGamePiece.y + (myGamePiece.height / 2)) <= (myWin.y + myWin.height) && (myGamePiece.x + (myGamePiece.width / 2)) >= myWin.x && myGamePiece.x <= (myWin.x + myWin.width)) { window.open('./win-screen.html'); window.close('./index.html'); }
+    else if ((myGamePiece.x + (myGamePiece.width / 2)) >= myWin.x && (myGamePiece.x + (myGamePiece.width / 2)) <= (myWin.x + myWin.width) && (myGamePiece.y + (myGamePiece.height / 2)) >= myWin.y && myGamePiece.y <= (myWin.y + myWin.height)) { window.open('./win-screen.html'); window.close('./index.html'); }
+
     myGamePiece.newPos();
     myGamePiece.update();
 }

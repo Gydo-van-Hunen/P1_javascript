@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 canvas {
@@ -9,8 +10,16 @@ canvas {
     background-color: aqua;
 }
 
-body {  
+body {
     display: flex;
     justify-content: center;
     margin-top: 5rem;
+}
+
+#win {
+    background-color: green;
+}
+
+h1 {    color: white;
+    font-size: 10rem;
 }
