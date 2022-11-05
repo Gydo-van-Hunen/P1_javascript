@@ -146,3 +146,8 @@ function updateGameArea() {
     myGamePiece.newPos();
     myGamePiece.update();
 }
+
+function again() {
+    window.open('./index.html');
+    window.close('./win-screen.html');
+}
