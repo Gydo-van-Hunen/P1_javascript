@@ -152,10 +152,10 @@ function updateGameArea() {
         }
     }
     // the trap
-    if ((myGamePiece.y + myGamePiece.height + 3) >= myTrap.y && (myGamePiece.y + myGamePiece.height + 3) <= (myTrap.y + myTrap.height) && (myGamePiece.x + myGamePiece.width) >= myTrap.x && myGamePiece.x <= (myTrap.x + myTrap.width)) { location.reload(); }
-    else if ((myGamePiece.y - 3) <= (myTrap.y + myTrap.height) && (myGamePiece.y - 3) >= myTrap.y && (myGamePiece.x + myGamePiece.width) >= myTrap.x && myGamePiece.x <= (myTrap.x + myTrap.width)) { location.reload(); }
-    else if ((myGamePiece.x + myGamePiece.width + 3) >= myTrap.x && (myGamePiece.x + myGamePiece.width + 3) <= (myTrap.x + myTrap.width) && (myGamePiece.y + myGamePiece.height) >= myTrap.y && myGamePiece.y <= (myTrap.y + myTrap.height)) { location.reload(); }
-    else if ((myGamePiece.x - 3) >= myTrap.x && (myGamePiece.x - 3) <= (myTrap.x + myTrap.width) && (myGamePiece.y + myGamePiece.height) >= myTrap.y && myGamePiece.y <= (myTrap.y + myTrap.height)) { location.reload(); }
+    if ((myGamePiece.y + (myGamePiece.height / 2)) >= myTrap.y && (myGamePiece.y + myGamePiece.height + 3) <= (myTrap.y + myTrap.height) && (myGamePiece.x + myGamePiece.width) >= myTrap.x && myGamePiece.x <= (myTrap.x + myTrap.width)) { location.reload(); }
+    else if ((myGamePiece.y + (myGamePiece.height / 2)) <= (myTrap.y + myTrap.height) && (myGamePiece.y - 3) >= myTrap.y && (myGamePiece.x + myGamePiece.width) >= myTrap.x && myGamePiece.x <= (myTrap.x + myTrap.width)) { location.reload(); }
+    else if ((myGamePiece.x + (myGamePiece.width / 2)) >= myTrap.x && (myGamePiece.x + myGamePiece.width + 3) <= (myTrap.x + myTrap.width) && (myGamePiece.y + myGamePiece.height) >= myTrap.y && myGamePiece.y <= (myTrap.y + myTrap.height)) { location.reload(); }
+    else if ((myGamePiece.x + (myGamePiece.width / 2)) >= myTrap.x && (myGamePiece.x - 3) <= (myTrap.x + myTrap.width) && (myGamePiece.y + myGamePiece.height) >= myTrap.y && myGamePiece.y <= (myTrap.y + myTrap.height)) { location.reload(); }
     // the win
     if ((myGamePiece.y + (myGamePiece.height / 2)) >= myWin.y && (myGamePiece.y + (myGamePiece.height / 2)) <= (myWin.y + myWin.height) && (myGamePiece.x + (myGamePiece.width / 2)) >= myWin.x && myGamePiece.x <= (myWin.x + myWin.width)) { window.open('./win-screen.html'); window.close('./index.html'); }
     else if ((myGamePiece.x + (myGamePiece.width / 2)) >= myWin.x && (myGamePiece.x + (myGamePiece.width / 2)) <= (myWin.x + myWin.width) && (myGamePiece.y + (myGamePiece.height / 2)) >= myWin.y && myGamePiece.y <= (myWin.y + myWin.height)) { window.open('./win-screen.html'); window.close('./index.html'); }
